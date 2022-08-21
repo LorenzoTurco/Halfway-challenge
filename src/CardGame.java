@@ -14,10 +14,12 @@ public class CardGame{
     }
     public void initializeDeck(){
         final String[] SUIT = {"heart","club", "diamond", "spade"};
-        final int[] SINGLE_DECK_TEMPLATE = {2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+        final int[] SINGLE_DECK_VALUES_TEMPLATE = {1,2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+        final String[] SINGLE_DECK_SYMBOL_TEMPLATE = {"1","2","3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 
-        for(int i = 0; i<SINGLE_DECK_TEMPLATE.length*4; i++){
-            deckOfCards.add(new Card(SINGLE_DECK_TEMPLATE[i%13], SUIT[(int) Math.floor(deckOfCards.size()/13)]));
+
+        for(int i = 0; i<SINGLE_DECK_VALUES_TEMPLATE.length*4; i++){
+            deckOfCards.add(new Card(SINGLE_DECK_VALUES_TEMPLATE[i%13], SUIT[(int) Math.floor(deckOfCards.size()/13)], SINGLE_DECK_SYMBOL_TEMPLATE[i%13]));
         }
     }
 
@@ -50,11 +52,7 @@ public class CardGame{
         return this.deckOfCards;
     }
 
-
-
     public List<Card> getDeck(){
-        System.out.println(deckOfCards);
-
         return this.deckOfCards;
     }
 }

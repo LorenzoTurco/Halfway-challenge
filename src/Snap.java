@@ -9,6 +9,7 @@ public class Snap extends CardGame{
     String previousCardSuit = "";
     String snap = "";
     boolean gameOver = false;
+
     public void play(){
 
         introduction();
@@ -63,10 +64,17 @@ public class Snap extends CardGame{
     public void lookForSnap(){
         //https://stackoverflow.com/questions/44038081/set-time-limit-on-user-input-scanner-java
         Timer timer = new Timer();
+
         timer.schedule(timerTask, 2000);
         snap = scanner.nextLine();
         timer.cancel();
-        victoryMessage();
+
+        if(snap.equalsIgnoreCase("snap")){
+           victoryMessage();
+        }
+        else{
+            lostMessage();
+        }
 
     }
 
@@ -80,5 +88,7 @@ public class Snap extends CardGame{
         System.out.println();
         System.out.println("Too slow, you Lost");
     }
+
+
 
 }
