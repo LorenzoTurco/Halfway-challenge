@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 public class CardGame{
-
     List<Card> deckOfCards = new ArrayList<Card>();
 
     public CardGame(){
